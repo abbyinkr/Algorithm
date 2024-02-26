@@ -13,6 +13,6 @@ class Solution {
         for (int i=0; i<overwrite_char.length; i++) 
             my_char[s + i] = overwrite_char[i];
         
-        return new String(my_char);
+        return String.valueOf(my_char);
     }
 }
