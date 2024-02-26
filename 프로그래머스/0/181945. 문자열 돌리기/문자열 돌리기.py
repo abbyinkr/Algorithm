@@ -1,4 +1,4 @@
-char_list = list(input())
+str = input()
 
-for char in char_list:
+for char in str:
     print(char)
