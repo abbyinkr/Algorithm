@@ -6,7 +6,7 @@ public class Solution {
         int a = sc.nextInt();
         int b = sc.nextInt();
         int sum = a + b;
-        String result = String.format("%d + %d = %d", a, b, sum);
-        System.out.println(result);
+        
+        System.out.printf("%d + %d = %d", a, b, sum);
     }
 }
