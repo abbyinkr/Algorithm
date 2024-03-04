@@ -1,16 +1,4 @@
 def solution(n, control):
     
-    for c in control:
-        if c == "w":
-            n += 1
-            continue
-        elif c == "s":
-            n -= 1
-            continue
-        elif c == "d":
-            n += 10
-            continue
-        elif c == "a":
-            n -= 10
-            continue
-    return n
+    values = dict(zip(["w", "s", "d", "a"], [1, -1, 10, -10]))
+    return n + sum([values[c] for c in control])
