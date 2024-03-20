@@ -1,3 +1,2 @@
 def solution(todo_list, finished):
-    todo = dict(zip(todo_list, finished))
-    return [k for k, v in todo.items() if v is False]
+    return [work for i, work in enumerate(todo_list) if finished[i] is False]
