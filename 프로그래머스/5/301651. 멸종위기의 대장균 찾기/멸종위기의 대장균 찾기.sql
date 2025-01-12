@@ -1,0 +1,20 @@
+WITH RECURSIVE generations AS (
+    SELECT ID, 1 AS generation
+    FROM ECOLI_DATA 
+    WHERE PARENT_ID IS NULL
+
+    UNION ALL
+    
+    SELECT e.ID, generation + 1
+    FROM ECOLI_DATA e
+    JOIN generations g 
+    ON e.PARENT_ID = g.ID 
+) 
+
+SELECT COUNT(*) COUNT, g.GENERATION GENERATION
+FROM generations g
+    LEFT JOIN ECOLI_DATA child 
+    ON g.ID = child.PARENT_ID
+WHERE child.ID IS NULL
+GROUP BY g.GENERATION
+ORDER BY g.GENERATION
